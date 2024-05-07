@@ -11,7 +11,7 @@ import java.util.List;
 @Service
 public class FamousPeopleService {
     private final List<Person> people = new ArrayList<>();
-    ;
+
 
     public FamousPeopleService() {
         people.add(new Person("Angela", "Merkelová", LocalDate.of(1954, 7, 17), Gender.Female));
@@ -39,5 +39,9 @@ public class FamousPeopleService {
 
     public void deleteById(int id) {
         people.remove(id);
+    }
+
+    public void update(int id, Person person) {
+        people.set(id, person);
     }
 }
